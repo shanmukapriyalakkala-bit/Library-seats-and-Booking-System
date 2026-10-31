@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Seat Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">📚 LibrarySpace</div>
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#seats">Seat Map</a>
+            <a href="#booking">Book a Seat</a>
+            <a href="#history">My Bookings</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="tag">SMART LIBRARY SYSTEM</p>
+                <h1>Find your perfect study space.</h1>
+                <p>Reserve a seat, manage your time, and focus on learning.</p>
+            </div>
+            <div class="welcome-icon">📖</div>
+        </section>
+
+        <section id="dashboard" class="stats">
+            <div class="stat-card">
+                <p>Total Seats</p>
+                <h2 id="totalSeats">20</h2>
+            </div>
+            <div class="stat-card available-card">
+                <p>Available Seats</p>
+                <h2 id="availableSeats">20</h2>
+            </div>
+            <div class="stat-card occupied-card">
+                <p>Occupied Seats</p>
+                <h2 id="occupiedSeats">0</h2>
+            </div>
+        </section>
+
+        <section id="seats" class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Choose Your Seat</h2>
+                    <p>Select any green seat to book it.</p>
+                </div>
+                <div class="legend">
+                    <span>🟩 Available</span>
+                    <span>🟥 Occupied</span>
+                    <span>🟦 Selected</span>
+                </div>
+            </div>
+            <div id="seatMap" class="seat-map"></div>
+        </section>
+
+        <section id="booking" class="panel">
+            <h2>Book Your Study Session</h2>
+            <p class="muted">Select a seat first, then complete the form.</p>
+
+            <form id="bookingForm">
+                <label for="studentName">Student Name</label>
+                <input id="studentName" type="text"
+                       placeholder="Enter your name" required>
+
+                <label for="studentId">Student ID</label>
+                <input id="studentId" type="text"
+                       placeholder="Enter your student ID" required>
+
+                <label for="selectedSeat">Selected Seat</label>
+                <input id="selectedSeat" type="text"
+                       placeholder="Choose from the seat map"
+                       readonly required>
+
+                <label for="bookingDate">Booking Date</label>
+                <input id="bookingDate" type="date" required>
+
+                <label for="timeSlot">Time Slot</label>
+                <select id="timeSlot" required>
+                    <option value="">Choose a time slot</option>
+                    <option value="09:00 - 10:00">9 AM - 10 AM</option>
+                    <option value="10:00 - 11:00">10 AM - 11 AM</option>
+                    <option value="11:00 - 12:00">11 AM - 12 PM</option>
+                    <option value="14:00 - 15:00">2 PM - 3 PM</option>
+                    <option value="15:00 - 16:00">3 PM - 4 PM</option>
+                </select>
+
+                <button type="submit" class="book-button">
+                    Confirm Booking
+                </button>
+            </form>
+
+            <p id="message" class="message" aria-live="polite"></p>
+        </section>
+
+        <section id="history" class="panel">
+            <h2>My Bookings</h2>
+            <p class="muted">Your reservations appear here.</p>
+            <div id="bookingHistory"></div>
+        </section>
+
+        <footer>
+            <p>LibrarySpace | Smart Library Seat Booking System</p>
+            <p>Student Project • HTML, CSS and JavaScript</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
